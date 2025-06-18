@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import Homepage from './components/Homepage';
 import Projects from './components/projects';
 import Experience from './components/WorkExperience';
-import Skills from './components/Skills';
+import Skills from './components/skills';
 import Hobbies from './components/Hobbies';
 import Contact from './components/Contact';
 
