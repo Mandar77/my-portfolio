@@ -3,7 +3,7 @@ import React from "react";
 import Homepage from "./components/homepage";
 import WorkExperience from "./components/WorkExperience";
 import Projects from "./components/projects";
-import Skills from "./components/skills";
+import Skills from "./components/Skills";
 import Education from './components/Education';
 import Hobbies from './components/hobbies';
 import Navbar from "./components/navbar";
