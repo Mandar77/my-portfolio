@@ -1,11 +1,33 @@
-import React from 'react';
+import React from "react";
+import { motion } from "framer-motion";
+
 const Homepage = () => (
-  <section className="flex flex-col items-center justify-center py-20 bg-gradient-to-b from-blue-50 to-white" id="home">
-    <img src={require('../assets/profile.jpg')} alt="Profile" className="w-32 h-32 rounded-full mb-4 shadow-lg" />
-    <h1 className="text-4xl font-bold mb-2">Your Name</h1>
-    <p className="text-lg text-gray-700 mb-4 text-center max-w-xl">
-      Short professional bio goes here. Highlight your passion, expertise, and what makes you unique.
+  <motion.section
+    id="home"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.7 }}
+    className="flex flex-col items-center justify-center min-h-[70vh] px-4 bg-gradient-to-b from-blue-50 to-white"
+  >
+    <img
+      src={require("../assets/profile.jpeg")}
+      alt="Profile"
+      className="w-32 h-32 rounded-full shadow-lg mb-6 object-cover"
+    />
+    <h1 className="text-4xl font-bold mb-2 text-blue-800">Mandar Ambulkar</h1>
+    <p className="text-lg text-gray-700 text-center max-w-xl mb-4">
+      Welcome! I’m a passionate computer scientist with experience in deep learning, cloud, and full-stack development. I love building impactful solutions and collaborating with diverse teams to solve real-world problems.
     </p>
-  </section>
+    <motion.a
+      href="#contact"
+      whileHover={{ scale: 1.08 }}
+      whileTap={{ scale: 0.95 }}
+      className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition-colors font-semibold inline-block focus:outline-none focus:ring-2 focus:ring-blue-400"
+    >
+      Contact Me
+    </motion.a>
+  </motion.section>
 );
+
 export default Homepage;
