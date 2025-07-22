@@ -3,10 +3,10 @@ import React from "react";
 import Homepage from "./components/homepage";
 // <<<<<<< feature/timeline
 import Timeline from "./components/Timeline";
-import Skills from "./components/skills";
+// import Skills from "./components/skills";
 // =======
 import WorkExperience from "./components/WorkExperience";
-import Projects from "./components/projects";
+// import Projects from "./components/projects";
 import Skills from "./components/Skills";
 import Education from './components/Education';
 // >>>>>>> main
