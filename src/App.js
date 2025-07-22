@@ -7,7 +7,7 @@ import Timeline from "./components/Timeline";
 // =======
 import WorkExperience from "./components/WorkExperience";
 // import Projects from "./components/projects";
-import Skills from "./components/Skills";
+import Skills from "./components/skills";
 import Education from './components/Education';
 // >>>>>>> main
 import Hobbies from './components/hobbies';
