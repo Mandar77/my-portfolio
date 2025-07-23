@@ -1,14 +1,17 @@
 // src/App.js
 import React from "react";
 import Homepage from "./components/homepage";
-// <<<<<<< feature/timeline
 import Timeline from "./components/Timeline";
+// <<<<<<< feature/timeline
+import Skills from "./components/skills";
+=======
 // import Skills from "./components/skills";
 // =======
 import WorkExperience from "./components/WorkExperience";
 // import Projects from "./components/projects";
 import Skills from "./components/skills";
 import Education from './components/Education';
+// >>>>>>> main
 // >>>>>>> main
 import Hobbies from './components/hobbies';
 import Navbar from "./components/navbar";
