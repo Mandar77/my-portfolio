@@ -40,7 +40,7 @@ export const timelineData = [
     subtitle: "Published at IC-ICN 2022",
     description: "Used AWS, RTO APIs, OpenCV (Haar Cascade, EasyOCR), Apache, EC2",
     type: "project",
-    link: "https://www.researchgate.net/publication/384329752"
+    publication: "https://www.researchgate.net/publication/384329752"
   },
   {
     date: "2022",
@@ -48,7 +48,7 @@ export const timelineData = [
     subtitle: "Published at IC-ICN 2022",
     description: "Web app with Plant Disease Detection (ResNet9) and Crop Recommendation (SVM)",
     type: "project",
-    link: "https://www.researchgate.net/publication/384330843"
+    publication: "https://www.researchgate.net/publication/384330843"
   },
   {
     date: "2024",
@@ -56,7 +56,8 @@ export const timelineData = [
     subtitle: "3rd place at NU Student Research Showcase",
     description: "97.25% accuracy, <40ms latency, 119GB dataset, 34-model ensemble",
     type: "project",
-    link: "https://www.researchgate.net/publication/387056779_Multi_Modal_Dynamic_Hand_Gesture_Recognition"
+    publication: "https://www.researchgate.net/publication/387056779_Multi_Modal_Dynamic_Hand_Gesture_Recognition",
+    github: "https://github.khoury.northeastern.edu/mandar07/CS5330_FA24_Group1_Project.git"
   },
     {
     date: "2024",
@@ -64,6 +65,6 @@ export const timelineData = [
     subtitle: "React and Tailwind CSS",
     description: "Modern, responsive portfolio built with React and Tailwind CSS. Deployed on Vercel with custom domain support.",
     type: "project",
-    link: "https://github.com/Mandar77/my-portfolio.git"
+    github: "https://github.com/Mandar77/my-portfolio.git"
   }
 ];

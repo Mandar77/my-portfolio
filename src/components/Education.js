@@ -4,15 +4,13 @@ const educationData = [
   {
     university: 'Northeastern University, San Jose, CA',
     degree: 'Master of Science in Computer Science',
-    gpa: '3.87/4.0',
+    gpa: '4.0/4.0',
     graduation: 'Expected Graduation: Dec 2025',
     courses: [
       'Pattern Recognition and Computer Vision',
       'Data Mining',
       'Algorithms',
-      'Programming Design Paradigm',
-      'Computer Systems',
-      'Natural Language Processing',
+      'Programming Design Paradigm'
     ]
   },
   {
@@ -26,10 +24,7 @@ const educationData = [
       'Web Dev',
       'Cloud Computing',
       'Networking',
-      'OS',
-      'Software Engineering',
-      'Data Structures and Algorithms',
-      'Image Processing and Computer Vision',
+      'OS'
     ]
   }
 ];

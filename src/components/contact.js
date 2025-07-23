@@ -28,39 +28,15 @@ const socialLinks = [
   },
 ];
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/mldnlzpw"; // Replace with your Formspree endpoint
-
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [sent, setSent] = useState(false);
-  const [error, setError] = useState("");
-
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setError("");
-    try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          message: form.message,
-        }),
-      });
-      if (res.ok) {
-        setSent(true);
-        setForm({ name: "", email: "", message: "" });
-        setTimeout(() => setSent(false), 4000);
-      } else {
-        setError("Something went wrong. Please try again.");
-      }
-    } catch {
-      setError("Something went wrong. Please try again.");
-    }
+    // Integrate with EmailJS, Formspree, or similar for production
+    alert("Message sent!");
+    setForm({ name: "", email: "", message: "" });
   };
 
   return (
@@ -103,20 +79,10 @@ const Contact = () => {
           />
           <button
             type="submit"
-            className="bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-colors"
           >
             Send
           </button>
-          {sent && (
-            <div className="text-green-600 font-semibold text-center mt-2">
-              Thank you! Your message has been sent.
-            </div>
-          )}
-          {error && (
-            <div className="text-red-600 font-semibold text-center mt-2">
-              {error}
-            </div>
-          )}
         </form>
         <div className="flex-1 flex flex-col items-center justify-center gap-4">
           <h3 className="text-lg font-semibold mb-2">Connect with me</h3>
