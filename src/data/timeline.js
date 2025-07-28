@@ -1,7 +1,7 @@
 export const timelineData = [
   {
     date: "June 2025",
-    title: "Burnout Prevention Dashboard & AI Chat",
+    title: "Burnout Prevention Dashboard & AI Chat Bot",
     subtitle: "San Jose, CA",
     description: "Full-stack wellness app with AI assistant. Integrated 5+ health APIs, Zustand state management, and retry logic. Achieved <200ms AI chat response and reduced failed API calls from 15% to 9%.",
     type: "project",
