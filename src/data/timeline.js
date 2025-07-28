@@ -1,5 +1,21 @@
 export const timelineData = [
   {
+    date: "June 2025",
+    title: "Burnout Prevention Dashboard & AI Chat",
+    subtitle: "San Jose, CA",
+    description: "Full-stack wellness app with AI assistant. Integrated 5+ health APIs, Zustand state management, and retry logic. Achieved <200ms AI chat response and reduced failed API calls from 15% to 9%.",
+    type: "project",
+    github: "https://github.com/Mandar77/hackathon"
+  },
+  {
+    date: "April 2025",
+    title: "Algorithm RAG System",
+    subtitle: "San Jose, CA",
+    description: "RAG system for algorithm recommendation using FAISS vector store and hybrid search. Achieved 95% accuracy, <100ms latency, and 50% faster development with modular FastAPI service.",
+    type: "project",
+    github: "https://github.com/Aarzoo-Bansal/algorithm_rag_system"
+  },
+  {
     date: "Sept 2024 - April 2025",
     title: "Graduate Teaching Assistant",
     subtitle: "Northeastern University, San Jose, CA",
