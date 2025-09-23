@@ -62,25 +62,27 @@ const skills = [
 ];
 
 const Skills = () => (
-  <section id="skills" className="py-12 bg-white">
-    <h2 className="text-3xl font-bold text-center mb-10">Skills</h2>
-    <div className="max-w-5xl mx-auto grid gap-10 md:grid-cols-2 lg:grid-cols-3 px-4">
-      {skills.map((cat, idx) => (
-        <div key={idx}>
-          <h3 className="text-lg font-semibold mb-4 text-blue-700">{cat.category}</h3>
-          <div className="flex flex-wrap gap-3">
-            {cat.items.map((item, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-2 px-3 py-2 bg-blue-50 rounded-lg shadow hover:bg-blue-100 transition-colors cursor-pointer text-blue-900 text-sm font-medium"
-              >
-                <span className="text-xl">{item.icon}</span>
-                {item.name}
-              </div>
-            ))}
+  <section id="skills" className="py-12">
+    <div className="glass-card max-w-5xl mx-auto p-8">
+      <h2 className="text-3xl font-bold text-center mb-10 text-white">Skills</h2>
+      <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 px-4">
+        {skills.map((cat, idx) => (
+          <div key={idx}>
+            <h3 className="text-lg font-semibold mb-4 text-blue-200">{cat.category}</h3>
+            <div className="flex flex-wrap gap-3">
+              {cat.items.map((item, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-2 px-3 py-2 bg-blue-100 bg-opacity-20 rounded-lg shadow hover:bg-blue-200 hover:bg-opacity-30 transition-colors cursor-pointer text-white text-sm font-medium"
+                >
+                  <span className="text-xl">{item.icon}</span>
+                  {item.name}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   </section>
 );
