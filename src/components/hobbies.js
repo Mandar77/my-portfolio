@@ -32,8 +32,8 @@ const cardVariants = {
 };
 
 const Hobbies = () => (
-  <section id="hobbies" className="py-12 bg-gray-50">
-    <h2 className="text-3xl font-bold text-center mb-10">Hobbies & Interests</h2>
+  <section id="hobbies" className="py-12">
+    <h2 className="text-3xl font-bold text-center mb-10 text-white">Hobbies & Interests</h2>
     <div className="max-w-4xl mx-auto grid gap-8 px-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {hobbiesData.map((hobby, idx) => (
         <motion.div
@@ -43,15 +43,15 @@ const Hobbies = () => (
           whileInView="visible"
           viewport={{ once: true }}
           variants={cardVariants}
-          className="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer"
+          className="glass-card p-6 flex flex-col items-center text-center"
           tabIndex={0}
           aria-label={hobby.name}
         >
           <div className="text-6xl mb-4" aria-hidden="true">
             {hobby.icon}
           </div>
-          <h3 className="text-xl font-semibold mb-2">{hobby.name}</h3>
-          <p className="text-gray-700">{hobby.description}</p>
+          <h3 className="text-xl font-semibold mb-2 text-white">{hobby.name}</h3>
+          <p className="text-gray-200">{hobby.description}</p>
         </motion.div>
       ))}
     </div>

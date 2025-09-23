@@ -29,8 +29,8 @@ const Timeline = () => {
   const sortedTimeline = sortTimelineData(timelineData);
 
   return (
-    <section id="timeline" className="py-20 bg-gray-50">
-      <h2 className="text-3xl font-bold text-center mb-16">Timeline</h2>
+    <section id="timeline" className="py-20">
+      <h2 className="text-3xl font-bold text-center mb-16 text-white">Timeline</h2>
       <div className="relative max-w-4xl mx-auto">
         {/* Vertical line in the center */}
         <div className="absolute left-1/2 transform -translate-x-1/2 h-full border-l-4 border-gray-300"></div>
@@ -65,21 +65,21 @@ const Timeline = () => {
 
                 {/* Card */}
                 <div
-                  className={`bg-white p-6 rounded-lg shadow-md w-full md:w-1/2 hover:shadow-xl transition-shadow duration-300 ${
+                  className={`glass-card p-6 w-full md:w-1/2 ${
                     isLeft ? "md:mr-auto md:ml-0" : "md:ml-auto md:mr-0"
                   }`}
                 >
-                  <h3 className="text-xl font-semibold">{item.title}</h3>
-                  <p className="text-blue-700">{item.subtitle}</p>
-                  <p className="text-sm text-gray-500">{item.date}</p>
-                  <p className="mt-3 text-gray-700">{item.description}</p>
+                  <h3 className="text-xl font-semibold text-white">{item.title}</h3>
+                  <p className="text-blue-200">{item.subtitle}</p>
+                  <p className="text-sm text-gray-300">{item.date}</p>
+                  <p className="mt-3 text-gray-200">{item.description}</p>
                   <div className="mt-3 flex gap-4">
                     {item.github && (
                       <a
                         href={item.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-gray-700 hover:text-black font-medium"
+                        className="flex items-center gap-1 text-gray-200 hover:text-white font-medium"
                         aria-label="GitHub Repository"
                       >
                         <FaGithub className="inline" /> GitHub
@@ -90,7 +90,7 @@ const Timeline = () => {
                         href={item.publication}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-blue-700 hover:text-blue-900 font-medium"
+                        className="flex items-center gap-1 text-blue-300 hover:text-blue-100 font-medium"
                         aria-label="Publication"
                       >
                         <FaExternalLinkAlt className="inline" /> Publication

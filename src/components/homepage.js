@@ -8,7 +8,7 @@ const Homepage = () => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.7 }}
-    className="flex flex-col items-center justify-center min-h-[70vh] px-4 bg-gradient-to-b from-blue-50 to-white"
+    className="glass-card flex flex-col items-center justify-center min-h-[70vh] px-4 py-8 md:p-12 my-8"
   >
     <img
       src={require("../assets/profile.jpeg")}

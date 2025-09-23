@@ -36,8 +36,8 @@ const experiences = [
 ];
 
 const WorkExperience = () => (
-  <section id="experience" className="py-12 bg-white">
-    <h2 className="text-3xl font-bold text-center mb-10">Work Experience</h2>
+  <section id="experience" className="py-12">
+    <h2 className="text-3xl font-bold text-center mb-10 text-white">Work Experience</h2>
     <div className="max-w-3xl mx-auto">
       <ol className="relative border-l-2 border-blue-300 ml-4">
         {experiences.map((exp, idx) => (
@@ -50,15 +50,15 @@ const WorkExperience = () => (
             className="mb-12 ml-6"
           >
             <span className="absolute w-4 h-4 bg-blue-500 rounded-full -left-2.5 border-2 border-white"></span>
-            <div className="bg-blue-50 p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
+            <div className="glass-card p-6">
               <div className="flex flex-col md:flex-row md:justify-between md:items-center">
                 <div>
-                  <h3 className="text-xl font-semibold">{exp.title}</h3>
-                  <span className="text-blue-700">{exp.company}</span>
-                  <div className="text-gray-500 text-sm">{exp.location} — {exp.duration}</div>
+                  <h3 className="text-xl font-semibold text-white">{exp.title}</h3>
+                  <span className="text-blue-200">{exp.company}</span>
+                  <div className="text-gray-300 text-sm">{exp.location} — {exp.duration}</div>
                 </div>
               </div>
-              <ul className="mt-3 list-disc ml-6 text-gray-700">
+              <ul className="mt-3 list-disc ml-6 text-gray-200">
                 {exp.details.map((d, i) => (
                   <li key={i}>{d}</li>
                 ))}
