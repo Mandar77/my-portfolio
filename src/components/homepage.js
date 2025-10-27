@@ -16,7 +16,7 @@ const Homepage = () => (
       className="w-32 h-32 rounded-full shadow-lg mb-6 object-cover"
     />
     <h1 className="text-4xl font-bold mb-2 text-blue-800">Mandar Ambulkar</h1>
-    <p className="text-lg text-gray-700 text-center max-w-xl mb-4">
+    <p className="text-lg text-white text-center max-w-xl mb-4">
       Welcome! I’m a passionate computer scientist with experience in deep learning, cloud, and full-stack development. I love building impactful solutions and collaborating with diverse teams to solve real-world problems.
     </p>
     <motion.a
