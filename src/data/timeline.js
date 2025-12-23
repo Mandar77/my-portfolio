@@ -47,10 +47,10 @@ export const timelineData = [
     type: "work",
   },
   {
-    date: "Expected Dec 2025",
+    date: "Jan 2024 - Dec 2025",
     title: "Master of Science in Computer Science",
     subtitle: "Northeastern University, San Jose, CA",
-    description: "GPA: 3.87/4.0. Courses: Pattern Recognition and Computer Vision, Computer Systems, Natural Language Processing, Data Mining, Algorithms, Programming Design Paradigm",
+    description: "GPA: 3.80/4.0. Courses: Pattern Recognition and Computer Vision, Computer Systems, Natural Language Processing, Data Mining, Algorithms, Programming Design Paradigm, Fundamentals of Cloud Computing",
     type: "education",
   },
   {
