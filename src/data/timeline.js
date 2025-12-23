@@ -1,5 +1,29 @@
 export const timelineData = [
   {
+    date: "December 2025",
+    title: "Chess Game",
+    subtitle: "San Jose, CA",
+    description: "A full-featured chess application with real-time multiplayer support, computer opponents, and AI-powered game analysis using Google's Gemini API.",
+    type: "project",
+    github: "https://github.com/Mandar77/chess"
+  },
+  {
+    date: "December 2025",
+    title: "AI Demo Builder",
+    subtitle: "San Jose, CA",
+    description: "A cloud-native platform that automatically generates professional product demonstration videos for any project using AI and cloud-native technologies.",
+    type: "project",
+    github: "https://github.com/Mandar77/AI-Demo-Builder"
+  },
+  {
+    date: "August 2025 - Dec 2025",
+    title: "Software Engineer Intern, SurfSense (NU ChatBot Project)",
+    subtitle: "San Jose, CA",
+    description: "Productionized an open-source RAG platform for enterprise-grade institutional use, implementing RBAC, domainrestricted authentication, and privacy-aware retrieval controls to enforce data isolation, minimize sensitive data exposure, and support secure multi-tenant usage.",
+    type: "work",
+    publication: "https://www.researchgate.net/publication/398984671_NU_Chatbot_Adapting_Open-Source_RAG_Systems_for_Private_University_Deployment"
+  },
+  {
     date: "June 2025",
     title: "Burnout Prevention Dashboard & AI Chat Bot",
     subtitle: "San Jose, CA",
