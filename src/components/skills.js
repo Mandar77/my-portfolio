@@ -1,7 +1,10 @@
 // src/components/Skills.js
 import React from "react";
-import { FaCuttlefish, FaPython, FaJava, FaReact, FaDocker, FaAws, FaGoogle, FaGitAlt, FaJenkins } from 'react-icons/fa';
-import { SiNvidia, SiTensorflow, SiKeras, SiPytorch, SiScikitlearn, SiMysql, SiPostgresql, SiSqlite, SiMongodb, SiTerraform, SiAnsible, SiGitlab, SiPrometheus, SiGrafana, SiOpencv } from 'react-icons/si';
+import { FaPython, FaJava, FaReact, FaDocker, FaAws, FaGoogle, FaCuttlefish } from 'react-icons/fa';
+import { SiJavascript, SiTypescript, SiTensorflow, SiKeras, SiPytorch, SiScikitlearn, SiMysql, SiPostgresql, SiMongodb, SiTerraform, SiAnsible, SiPrometheus, SiGrafana } from 'react-icons/si';
+import { TbBrandNextjs, TbApi } from 'react-icons/tb';
+import { DiNodejsSmall } from 'react-icons/di';
+import { RiOpenaiFill } from 'react-icons/ri';
 
 const skills = [
   {
@@ -11,6 +14,8 @@ const skills = [
       { name: "C", icon: <FaCuttlefish /> },
       { name: "C++", icon: <FaCuttlefish /> },
       { name: "Java", icon: <FaJava /> },
+      { name: "JavaScript", icon: <SiJavascript /> },
+      { name: "TypeScript", icon: <SiTypescript /> },
     ],
   },
   {
@@ -20,10 +25,34 @@ const skills = [
       { name: "Keras", icon: <SiKeras /> },
       { name: "PyTorch", icon: <SiPytorch /> },
       { name: "Scikit-learn", icon: <SiScikitlearn /> },
-      { name: "OpenVINO" },
+      { name: "OpenVINO", icon: <RiOpenaiFill /> },
       { name: "Torch", icon: <SiPytorch /> },
       { name: "React", icon: <FaReact /> },
-      { name: "OpenCV", icon: <SiOpencv /> },
+      { name: "Next.js", icon: <TbBrandNextjs /> },
+      { name: "FastAPI", icon: <TbApi /> },
+      { name: "Flask", icon: <TbApi /> },
+      { name: "Node.js", icon: <DiNodejsSmall /> },
+      { name: "Tailwind CSS", icon: <RiOpenaiFill /> },
+      { name: "LangChain", icon: <RiOpenaiFill /> },
+      { name: "Pandas", icon: <RiOpenaiFill /> },
+      { name: "NumPy", icon: <RiOpenaiFill /> },
+      { name: "Beautiful Soup", icon: <RiOpenaiFill /> },
+      { name: "Uvicorn", icon: <TbApi /> },
+      { name: "Gunicorn", icon: <TbApi /> },
+      { name: "Jest", icon: <RiOpenaiFill /> },
+      { name: "ESLint", icon: <SiJavascript /> },
+    ],
+  },
+  {
+    category: "AI/ML & NLP",
+    items: [
+      { name: "LLM Integration", icon: <RiOpenaiFill /> },
+      { name: "RAG Systems", icon: <TbApi /> },
+      { name: "Vector Embeddings", icon: <TbApi /> },
+      { name: "FAISS", icon: <TbApi /> },
+      { name: "Semantic Search", icon: <TbApi /> },
+      { name: "Prompt Engineering", icon: <RiOpenaiFill /> },
+      { name: "NLP Processing", icon: <TbApi /> },
     ],
   },
   {
@@ -31,32 +60,48 @@ const skills = [
     items: [
       { name: "MySQL", icon: <SiMysql /> },
       { name: "PostgreSQL", icon: <SiPostgresql /> },
-      { name: "SQLite", icon: <SiSqlite /> },
       { name: "MongoDB", icon: <SiMongodb /> },
+      { name: "Supabase", icon: <TbApi /> },
+      { name: "Vector Databases", icon: <SiMongodb /> },
+      { name: "SQLite", icon: <RiOpenaiFill /> },
     ],
   },
   {
     category: "Cloud & DevOps",
     items: [
       { name: "AWS", icon: <FaAws /> },
-      { name: "GCP", icon: <FaGoogle /> },
+      { name: "Google Cloud", icon: <FaGoogle /> },
       { name: "Docker", icon: <FaDocker /> },
-      { name: "Kubernetes"},
-      { name: "OpenShift"},
+      { name: "Kubernetes", icon: <TbApi /> },
+      { name: "OpenShift", icon: <TbApi /> },
       { name: "Terraform", icon: <SiTerraform /> },
       { name: "Ansible", icon: <SiAnsible /> },
+      { name: "Vercel", icon: <TbApi /> },
     ],
   },
   {
     category: "Performance & CI/CD",
     items: [
-      { name: "Nvidia Triton", icon: <SiNvidia /> },
-      { name: "TensorRT", icon: <SiNvidia /> },
-      { name: "Git", icon: <FaGitAlt /> },
-      { name: "GitLab", icon: <SiGitlab /> },
-      { name: "Jenkins", icon: <FaJenkins /> },
+      { name: "Nvidia Triton", icon: <SiPrometheus /> },
+      { name: "TensorRT", icon: <SiPrometheus /> },
+      { name: "TensorRT", icon: <SiPrometheus /> },
+      { name: "Git", icon: <SiJavascript /> },
+      { name: "GitLab", icon: <TbApi /> },
+      { name: "Jenkins", icon: <SiPrometheus /> },
       { name: "Prometheus", icon: <SiPrometheus /> },
       { name: "Grafana", icon: <SiGrafana /> },
+    ],
+  },
+  {
+    category: "Web Technologies",
+    items: [
+      { name: "REST APIs", icon: <TbApi /> },
+      { name: "OAuth Integration", icon: <RiOpenaiFill /> },
+      { name: "WebSockets", icon: <TbApi /> },
+      { name: "WebSockets", icon: <TbApi /> },
+      { name: "State Management", icon: <RiOpenaiFill /> },
+      { name: "WebSockets", icon: <TbApi /> },
+      { name: "API Integration", icon: <TbApi /> },
     ],
   },
 ];
@@ -75,7 +120,7 @@ const Skills = () => (
                   key={i}
                   className="flex items-center gap-2 px-3 py-2 bg-blue-100 bg-opacity-20 rounded-lg shadow hover:bg-blue-200 hover:bg-opacity-30 transition-colors cursor-pointer text-white text-sm font-medium"
                 >
-                  <span className="text-xl">{item.icon}</span>
+                  {item.icon && <span className="text-xl">{item.icon}</span>}
                   {item.name}
                 </div>
               ))}
