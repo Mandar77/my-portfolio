@@ -4,9 +4,13 @@ const educationData = [
   {
     university: 'Northeastern University, San Jose, CA',
     degree: 'Master of Science in Computer Science',
-    gpa: '4.0/4.0',
+    gpa: '3.8/4.0',
     graduation: 'Expected Graduation: Dec 2025',
     courses: [
+      'Computer Systems',
+      'Natural Language Processing',
+      'Research Capstone',
+      'Cloud Computing',
       'Pattern Recognition and Computer Vision',
       'Data Mining',
       'Algorithms',

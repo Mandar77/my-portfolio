@@ -4,6 +4,17 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
+    title: "Software Engineer Intern",
+    company: "SurfSense (NU ChatBot Project)",
+    location: "San Jose, CA",
+    duration: "Aug 2025 to Dec 2025",
+    details: [
+      "Productionized an open-source RAG platform for enterprise-grade institutional use, implementing RBAC, domainrestricted authentication, and privacy-aware retrieval controls to enforce data isolation, minimize sensitive data exposure, and support secure multi-tenant usage.",
+      "Designed and optimized a hybrid RAG pipeline using pgvector, rerankers, caching, and asynchronous FastAPI endpoints, reducing end-to-end query latency from 320 ms to <180 ms under concurrent workloads.",
+      "Built a modular React + Zustand frontend with multi-session chat memory visualization, cutting UI render time by 40% and enabling seamless context handling for 1,000+ student users",
+    ],
+  },
+  {
     title: "Graduate Teaching Assistant",
     company: "Northeastern University",
     location: "San Jose, CA",

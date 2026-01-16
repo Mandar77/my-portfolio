@@ -3,51 +3,6 @@ import React from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { timelineData } from "../data/timeline";
 
-// Example projects array. Add as many as you want!
-// const projects = [
-//   {
-//     title: "Number Plate Recognition System",
-//     description: [
-//       "Published at IC-ICN 2022",
-//       "Used AWS, RTO APIs, OpenCV (Haar Cascade, EasyOCR), Apache, EC2",
-//     ],
-//     tech: ["AWS", "OpenCV", "EasyOCR", "Apache", "EC2", "RTO APIs"],
-//     publication: "https://www.researchgate.net/publication/384329752",
-//     // No GitHub for this project
-//   },
-//   {
-//     title: "KhetiKaksha (Farmer Hub)",
-//     description: [
-//       "Published at IC-ICN 2022",
-//       "Web app with Plant Disease Detection (ResNet9) and Crop Recommendation (SVM)",
-//     ],
-//     tech: ["React", "ResNet9", "SVM", "Web App"],
-//     publication: "https://www.researchgate.net/publication/384330843"
-//     // No GitHub for this project
-//   },
-//   {
-//     title: "Multi Modal Dynamic Hand Gesture Recognition",
-//     description: [
-//       "3rd place at NU Student Research Showcase",
-//       "97.25% accuracy, <40ms latency, 119GB dataset, 34-model ensemble",
-//     ],
-//     tech: ["Ensemble", "Deep Learning", "Python"],
-//     publication: "https://www.researchgate.net/publication/387056779_Multi_Modal_Dynamic_Hand_Gesture_Recognition",
-//     github: "https://github.khoury.northeastern.edu/mandar07/CS5330_FA24_Group1_Project.git",
-//   },
-//   {
-//     title: "Personal Portfolio Website",
-//     description: [
-//       "Modern, responsive portfolio built with React and Tailwind CSS.",
-//       "Deployed on Vercel with custom domain support.",
-//     ],
-//     tech: ["React", "Tailwind CSS", "Vercel"],
-//     github: "https://github.com/Mandar77/my-portfolio.git",
-//     // No publication for this project
-//   },
-//   // Add more projects as needed!
-// ];
-
 const projects = timelineData.filter(item => item.type === 'project');
 
 const Projects = () => (

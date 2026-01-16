@@ -1,5 +1,13 @@
 export const timelineData = [
   {
+    date: "January 2026",
+    title: "Project Phoenix",
+    subtitle: "San Jose, CA",
+    description: "A crash-resilient, AI-driven autonomous SRE system that decomposes long-running goals into MongoDB-backed workflows and reliably resumes multi-agent execution across failures, restarts, and system deaths.",
+    type: "project",
+    github: "https://github.com/Mandar77/pheonix.git"
+  },
+  {
     date: "December 2025",
     title: "Chess Game",
     subtitle: "San Jose, CA",
