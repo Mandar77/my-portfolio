@@ -13,13 +13,19 @@ const TypedOutput = ({ content, onComplete, speed = 8 }) => {
   const [displayedContent, setDisplayedContent] = useState('');
   const [isComplete, setIsComplete] = useState(false);
   const hasCompletedRef = useRef(false);
+  const onCompleteRef = useRef(onComplete);
+  
+  // Keep the ref updated
+  useEffect(() => {
+    onCompleteRef.current = onComplete;
+  }, [onComplete]);
 
   useEffect(() => {
     if (!content) {
       setIsComplete(true);
       if (!hasCompletedRef.current) {
         hasCompletedRef.current = true;
-        onComplete?.();
+        onCompleteRef.current?.();
       }
       return;
     }
@@ -39,18 +45,18 @@ const TypedOutput = ({ content, onComplete, speed = 8 }) => {
         setIsComplete(true);
         if (!hasCompletedRef.current) {
           hasCompletedRef.current = true;
-          onComplete?.();
+          onCompleteRef.current?.();
         }
       }
     }, speed);
 
     return () => clearInterval(interval);
-  }, [content, speed]); // Removed onComplete from dependencies
+  }, [content, speed]);
 
   return (
     <pre className="output">
       {displayedContent}
-      {!isComplete && <span className="typing-cursor">▋</span>}
+      {!isComplete && <span className="typing-cursor">|</span>}
     </pre>
   );
 };
