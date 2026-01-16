@@ -27,7 +27,7 @@ export const timelineData = [
     date: "August 2025 - Dec 2025",
     title: "Software Engineer Intern, SurfSense (NU ChatBot Project)",
     subtitle: "San Jose, CA",
-    description: "Productionized an open-source RAG platform for enterprise-grade institutional use, implementing RBAC, domainrestricted authentication, and privacy-aware retrieval controls to enforce data isolation, minimize sensitive data exposure, and support secure multi-tenant usage.",
+    description: "Productionized an open-source RAG platform for enterprise-grade institutional use, implementing RBAC, domain-restricted authentication, and privacy-aware retrieval controls to enforce data isolation, minimize sensitive data exposure, and support secure multi-tenant usage.",
     type: "work",
     publication: "https://www.researchgate.net/publication/398984671_NU_Chatbot_Adapting_Open-Source_RAG_Systems_for_Private_University_Deployment"
   },
@@ -107,7 +107,7 @@ export const timelineData = [
     publication: "https://www.researchgate.net/publication/387056779_Multi_Modal_Dynamic_Hand_Gesture_Recognition",
     github: "https://github.khoury.northeastern.edu/mandar07/CS5330_FA24_Group1_Project.git"
   },
-    {
+  {
     date: "2024",
     title: "Personal Portfolio Website",
     subtitle: "React and Tailwind CSS",

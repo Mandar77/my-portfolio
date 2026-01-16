@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Terminal Theme */
+  --terminal-bg: #0d1117;
+  --terminal-surface: #161b22;
+  --terminal-border: #30363d;
+  --terminal-text: #c9d1d9;
+  --terminal-green: #7ee787;
+  --terminal-cyan: #79c0ff;
+  --terminal-purple: #d2a8ff;
+  --terminal-orange: #ffa657;
+  --terminal-red: #ff7b72;
+  --terminal-yellow: #ffd700;
+
+  /* GUI Theme */
+  --gui-bg: #0a0a0f;
+  --gui-surface: rgba(255, 255, 255, 0.03);
+  --gui-surface-hover: rgba(255, 255, 255, 0.06);
+  --gui-border: rgba(255, 255, 255, 0.08);
+  --gui-text: #e4e4e7;
+  --gui-text-muted: #a1a1aa;
+  --gui-accent: #8b5cf6;
+  --gui-accent-2: #06b6d4;
+  --gui-accent-3: #ec4899;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background: var(--terminal-bg);
+  color: var(--terminal-text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+  min-height: 100vh;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.app-container.transitioning {
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--terminal-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--terminal-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--terminal-text);
+}
+
+::selection {
+  background: var(--gui-accent);
+  color: white;
+}
+
+/* Disable default focus outline for terminal inputs */
+.terminal-input:focus,
+.terminal-input:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Focus styles only for GUI */
+.gui-container *:focus-visible {
+  outline: 2px solid var(--gui-accent);
+  outline-offset: 2px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+code, pre {
+  font-family: 'JetBrains Mono', monospace;
+}
