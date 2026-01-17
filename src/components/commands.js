@@ -102,7 +102,7 @@ Email: ${personalInfo.email}`, instant: false };
        \\.@-@./       OS: Human 1.0 (Developer Edition)
        /\`\\_/\`\\       Host: San Jose, CA
       //  _  \\\\      Kernel: CS @ Northeastern
-     | \\     )|_     Uptime: ${new Date().getFullYear() - 2000} years
+     | \\     )|_     Uptime: 24 years
     /\`\\_\`>  <_/ \\    Shell: bash/zsh
     \\__/'---'\\__/    Status: ${Math.random() > 0.5 ? 'Coding' : 'On the badminton court'}
 
