@@ -8,7 +8,7 @@ const GUI = ({ onModeSwitch }) => {
   const [activeSection, setActiveSection] = useState('home');
   const [isVisible, setIsVisible] = useState({});
 
-  const sections = ['home', 'projects', 'experience', 'skills', 'hobbies', 'contact'];
+  const sections = ['home', 'projects', 'experience', 'skills', 'resume', 'hobbies', 'contact'];
 
   const projects = timelineData.filter(d => d.type === 'project');
   const experience = timelineData.filter(d => d.type === 'work');
@@ -63,6 +63,7 @@ const GUI = ({ onModeSwitch }) => {
             {section === 'projects' && '💼'}
             {section === 'experience' && '📋'}
             {section === 'skills' && '🛠️'}
+            {section === 'resume' && '📄'}
             {section === 'hobbies' && '🏸'}
             {section === 'contact' && '📧'}
           </button>
@@ -90,6 +91,10 @@ const GUI = ({ onModeSwitch }) => {
                 <button className="btn-primary" onClick={() => setActiveSection('projects')}>
                   <span>View Projects</span>
                   <span className="btn-arrow">→</span>
+                </button>
+                <button className="btn-secondary" onClick={() => setActiveSection('resume')}>
+                  <span className="btn-icon-inline">📄</span>
+                  <span>View Resume</span>
                 </button>
                 <button className="btn-secondary" onClick={() => setActiveSection('contact')}>
                   Get in Touch
@@ -224,6 +229,57 @@ const GUI = ({ onModeSwitch }) => {
                   </div>
                 </div>
               ))}
+            </div>
+          </section>
+        )}
+
+        {/* Resume Section */}
+        {activeSection === 'resume' && (
+          <section className={`gui-section resume-section ${isVisible.resume ? 'visible' : ''}`}>
+            <h2 className="section-title">Resume</h2>
+            <p className="section-subtitle">View my full resume or download a copy</p>
+            <div className="resume-actions">
+              <a
+                href={personalInfo.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                <span className="btn-icon-inline">↗</span>
+                <span>Open in New Tab</span>
+              </a>
+              <a
+                href={personalInfo.resumeUrl}
+                download={personalInfo.resumeFileName}
+                className="btn-secondary"
+              >
+                <span className="btn-icon-inline">⬇</span>
+                <span>Download PDF</span>
+              </a>
+            </div>
+            <div className="resume-viewer glass-card">
+              <object
+                data={personalInfo.resumeUrl}
+                type="application/pdf"
+                className="resume-pdf"
+                aria-label="Mandar Ambulkar Resume"
+              >
+                <div className="resume-fallback">
+                  <span className="resume-fallback-icon">📄</span>
+                  <p className="resume-fallback-text">
+                    Your browser can't display the PDF inline.
+                  </p>
+                  <a
+                    href={personalInfo.resumeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                  >
+                    <span>Open Resume</span>
+                    <span className="btn-arrow">→</span>
+                  </a>
+                </div>
+              </object>
             </div>
           </section>
         )}

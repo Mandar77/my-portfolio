@@ -4,7 +4,7 @@ import { personalInfo, hobbies, socialLinks, quotes } from '../data/personal';
 
 // File system simulation
 export const fileSystem = {
-  '~': ['about.txt', 'projects/', 'experience/', 'education/', 'skills/', 'hobbies/', 'contact.txt', '.secret'],
+  '~': ['about.txt', 'projects/', 'experience/', 'education/', 'skills/', 'hobbies/', 'contact.txt', 'resume.pdf', '.secret'],
   '~/projects': timelineData
     .filter(d => d.type === 'project')
     .map(p => p.title.toLowerCase().replace(/\s+/g, '-') + '.md'),
@@ -67,6 +67,7 @@ Available commands:
   experience        List work experience
   education         Show education
   skills            Display technical skills
+  resume            View or download my resume
   hobbies           Show hobbies & interests
   contact           Show contact information
 
@@ -200,6 +201,19 @@ Keep exploring!`, instant: true };
 +==================================================================+
 
 ${personalInfo.bio.long}`, instant: false };
+      }
+
+      // Resume file - binary PDF, redirect to 'resume' command
+      if (fileName === 'resume.pdf') {
+        return { content: `
+cat: resume.pdf: binary file (PDF)
+
+This is a PDF file and can't be displayed in the terminal.
+
+  -> Type 'resume' to open it in a new tab
+  -> Type 'resume --download' to download it
+  -> Type 'resume --help' for all options
+`, instant: true };
       }
 
       // Contact file
@@ -365,6 +379,70 @@ Let's connect!`, instant: false };
     case 'gui':
       onModeSwitch();
       return { content: 'Switching to GUI mode...', instant: true };
+
+    case 'resume': {
+      const action = (args[0] || '').toLowerCase();
+      const resumeUrl = personalInfo.resumeUrl;
+      const fileName = personalInfo.resumeFileName;
+
+      if (action === '--download' || action === '-d' || action === 'download') {
+        const a = document.createElement('a');
+        a.href = resumeUrl;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        return { content: `
++==================================================================+
+|                     RESUME DOWNLOAD STARTED                      |
++==================================================================+
+
+  [OK] Saving ${fileName}
+  [OK] Check your Downloads folder
+
+  Thanks for taking a look!
+`, instant: false };
+      }
+
+      if (action === '--view' || action === '-v' || action === 'view' || action === '') {
+        window.open(resumeUrl, '_blank', 'noopener,noreferrer');
+        return { content: `
++==================================================================+
+|                            RESUME                                |
++==================================================================+
+
+  ${personalInfo.name}
+  ${personalInfo.title}
+
+  -> Opening resume in a new tab...
+  -> File: ${fileName}
+
+  Usage:
+    resume              Open the resume in a new tab
+    resume --download   Download the PDF directly
+    resume --help       Show this message
+
+  Prefer the GUI? Type 'gui' for an embedded viewer.
+`, instant: false };
+      }
+
+      if (action === '--help' || action === '-h' || action === 'help') {
+        return { content: `
+resume - View or download my resume
+
+USAGE
+  resume [option]
+
+OPTIONS
+  (no args)           Open the resume in a new browser tab
+  --view, -v          Same as above
+  --download, -d      Download the PDF directly
+  --help, -h          Show this help message
+`, instant: true };
+      }
+
+      return { content: `resume: unknown option '${action}'. Try 'resume --help'.`, instant: true };
+    }
 
     // ==================== EASTER EGGS ====================
 
@@ -567,9 +645,9 @@ Hint: There are some hidden Easter egg commands to discover!
 
 // Available commands for tab completion
 export const availableCommands = [
-  'help', 'whoami', 'ls', 'cd', 'cat', 'projects', 'experience', 
-  'education', 'skills', 'hobbies', 'contact', 'clear', 'gui', 
-  'neofetch', 'history', 'matrix', 'coffee', 'cowsay', 'vim', 
+  'help', 'whoami', 'ls', 'cd', 'cat', 'projects', 'experience',
+  'education', 'skills', 'resume', 'hobbies', 'contact', 'clear', 'gui',
+  'neofetch', 'history', 'matrix', 'coffee', 'cowsay', 'vim',
   'badminton', 'pwd', 'echo', 'date', 'ping'
 ];
 

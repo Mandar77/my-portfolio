@@ -1,9 +1,10 @@
 /* Terminal Styles */
 .terminal-container {
-  min-height: 100vh;
+  height: 100vh;
   background: var(--terminal-bg);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .terminal-header {
@@ -13,8 +14,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  position: sticky;
-  top: 0;
+  flex-shrink: 0;
   z-index: 100;
 }
 
@@ -63,6 +63,7 @@
 
 .terminal-body {
   flex: 1;
+  min-height: 0;
   padding: 20px;
   overflow-y: auto;
   font-size: 14px;

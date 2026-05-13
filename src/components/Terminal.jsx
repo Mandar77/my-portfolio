@@ -9,12 +9,12 @@ import {
 import '../styles/terminal.css';
 
 // Typing animation component
-const TypedOutput = ({ content, onComplete, speed = 8 }) => {
+const TypedOutput = ({ content, onComplete, speed = 14 }) => {
   const [displayedContent, setDisplayedContent] = useState('');
   const [isComplete, setIsComplete] = useState(false);
   const hasCompletedRef = useRef(false);
   const onCompleteRef = useRef(onComplete);
-  
+
   // Keep the ref updated
   useEffect(() => {
     onCompleteRef.current = onComplete;
@@ -37,7 +37,7 @@ const TypedOutput = ({ content, onComplete, speed = 8 }) => {
 
     const interval = setInterval(() => {
       if (index < content.length) {
-        const chunkSize = Math.min(3, content.length - index);
+        const chunkSize = Math.min(2, content.length - index);
         setDisplayedContent(content.substring(0, index + chunkSize));
         index += chunkSize;
       } else {
@@ -135,6 +135,20 @@ const Terminal = ({ onModeSwitch }) => {
       terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
     }
   }, [history, showMatrix]);
+
+  // Continuously stick to bottom while typing animation is running
+  useEffect(() => {
+    if (!isTyping) return;
+    let rafId;
+    const stick = () => {
+      if (terminalRef.current) {
+        terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
+      }
+      rafId = requestAnimationFrame(stick);
+    };
+    rafId = requestAnimationFrame(stick);
+    return () => cancelAnimationFrame(rafId);
+  }, [isTyping]);
 
   // Focus input when not typing
   useEffect(() => {
@@ -299,7 +313,7 @@ const Terminal = ({ onModeSwitch }) => {
               <TypedOutput
                 content={item.content}
                 onComplete={i === history.length - 1 ? handleTypingComplete : undefined}
-                speed={8}
+                speed={14}
               />
             )}
           </div>

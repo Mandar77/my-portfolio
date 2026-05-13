@@ -3,7 +3,9 @@ export const personalInfo = {
   title: "Software Engineer • ML Engineer • Full Stack Developer",
   location: "San Jose, CA",
   email: "ambulkar.m@northeastern.edu",
-  
+  resumeUrl: process.env.PUBLIC_URL + "/Mandar-Ambulkar-Resume.pdf",
+  resumeFileName: "Mandar-Ambulkar-Resume.pdf",
+
   // Short tagline for terminal
   tagline: "If not coding, probably on the badminton court 🏸",
   
