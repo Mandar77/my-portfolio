@@ -5,7 +5,8 @@ export const timelineData = [
     subtitle: "San Jose, CA",
     description: "A crash-resilient, AI-driven autonomous SRE system that decomposes long-running goals into MongoDB-backed workflows and reliably resumes multi-agent execution across failures, restarts, and system deaths.",
     type: "project",
-    github: "https://github.com/Mandar77/pheonix.git"
+    github: "https://github.com/Mandar77/pheonix.git",
+    tech: ["Python", "MongoDB", "LLM Integration", "Multi-Agent", "Docker"]
   },
   {
     date: "December 2025",
@@ -13,7 +14,8 @@ export const timelineData = [
     subtitle: "San Jose, CA",
     description: "A full-featured chess application with real-time multiplayer support, computer opponents, and AI-powered game analysis using Google's Gemini API.",
     type: "project",
-    github: "https://github.com/Mandar77/chess"
+    github: "https://github.com/Mandar77/chess",
+    tech: ["React", "Node.js", "WebSockets", "Gemini API"]
   },
   {
     date: "December 2025",
@@ -21,11 +23,12 @@ export const timelineData = [
     subtitle: "San Jose, CA",
     description: "A cloud-native platform that automatically generates professional product demonstration videos for any project using AI and cloud-native technologies.",
     type: "project",
-    github: "https://github.com/Mandar77/AI-Demo-Builder"
+    github: "https://github.com/Mandar77/AI-Demo-Builder",
+    tech: ["Python", "FastAPI", "LLM Integration", "Docker", "GCP"]
   },
   {
     date: "August 2025 - Dec 2025",
-    title: "Software Engineer Intern, SurfSense (NU ChatBot Project)",
+    title: "Software Engineer, SurfSense (NU ChatBot Project)",
     subtitle: "San Jose, CA",
     description: "Productionized an open-source RAG platform for enterprise-grade institutional use, implementing RBAC, domain-restricted authentication, and privacy-aware retrieval controls to enforce data isolation, minimize sensitive data exposure, and support secure multi-tenant usage.",
     type: "work",
@@ -37,7 +40,8 @@ export const timelineData = [
     subtitle: "San Jose, CA",
     description: "Full-stack wellness app with AI assistant. Integrated 5+ health APIs, Zustand state management, and retry logic. Achieved <200ms AI chat response and reduced failed API calls from 15% to 9%.",
     type: "project",
-    github: "https://github.com/Mandar77/hackathon"
+    github: "https://github.com/Mandar77/hackathon",
+    tech: ["React", "Node.js", "Zustand", "REST APIs", "LLM Integration"]
   },
   {
     date: "April 2025",
@@ -45,7 +49,8 @@ export const timelineData = [
     subtitle: "San Jose, CA",
     description: "RAG system for algorithm recommendation using FAISS vector store and hybrid search. Achieved 95% accuracy, <100ms latency, and 50% faster development with modular FastAPI service.",
     type: "project",
-    github: "https://github.com/Aarzoo-Bansal/algorithm_rag_system"
+    github: "https://github.com/Aarzoo-Bansal/algorithm_rag_system",
+    tech: ["Python", "FastAPI", "FAISS", "RAG Systems", "Vector Embeddings"]
   },
   {
     date: "Sept 2024 - April 2025",
@@ -88,7 +93,8 @@ export const timelineData = [
     subtitle: "Published at IC-ICN 2022",
     description: "Used AWS, RTO APIs, OpenCV (Haar Cascade, EasyOCR), Apache, EC2",
     type: "project",
-    publication: "https://www.researchgate.net/publication/384329752"
+    publication: "https://www.researchgate.net/publication/384329752",
+    tech: ["Python", "OpenCV", "AWS", "EasyOCR"]
   },
   {
     date: "2022",
@@ -96,7 +102,8 @@ export const timelineData = [
     subtitle: "Published at IC-ICN 2022",
     description: "Web app with Plant Disease Detection (ResNet9) and Crop Recommendation (SVM)",
     type: "project",
-    publication: "https://www.researchgate.net/publication/384330843"
+    publication: "https://www.researchgate.net/publication/384330843",
+    tech: ["Python", "PyTorch", "Scikit-learn", "Flask"]
   },
   {
     date: "2024",
@@ -105,7 +112,8 @@ export const timelineData = [
     description: "97.25% accuracy, <40ms latency, 119GB dataset, 34-model ensemble",
     type: "project",
     publication: "https://www.researchgate.net/publication/387056779_Multi_Modal_Dynamic_Hand_Gesture_Recognition",
-    github: "https://github.khoury.northeastern.edu/mandar07/CS5330_FA24_Group1_Project.git"
+    github: "https://github.khoury.northeastern.edu/mandar07/CS5330_FA24_Group1_Project.git",
+    tech: ["Python", "PyTorch", "Computer Vision", "Deep Learning"]
   },
   {
     date: "2024",
@@ -113,6 +121,7 @@ export const timelineData = [
     subtitle: "React and Tailwind CSS",
     description: "Modern, responsive portfolio built with React and Tailwind CSS. Deployed on Vercel with custom domain support.",
     type: "project",
-    github: "https://github.com/Mandar77/my-portfolio.git"
+    github: "https://github.com/Mandar77/my-portfolio.git",
+    tech: ["React", "Tailwind CSS", "JavaScript", "Vercel"]
   }
 ];

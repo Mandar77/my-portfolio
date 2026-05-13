@@ -1,10 +1,11 @@
 import { timelineData } from '../data/timeline';
-import { skills, skillCategories } from '../data/skills';
+import { skills, skillCategories, skillCategoryEmojis } from '../data/skills';
 import { personalInfo, hobbies, socialLinks, quotes } from '../data/personal';
+import { achievements, badmintonVideos } from '../data/achievements';
 
 // File system simulation
 export const fileSystem = {
-  '~': ['about.txt', 'projects/', 'experience/', 'education/', 'skills/', 'hobbies/', 'contact.txt', 'resume.pdf', '.secret'],
+  '~': ['about.txt', 'projects/', 'experience/', 'education/', 'achievements/', 'skills/', 'hobbies/', 'contact.txt', 'resume.pdf', '.secret'],
   '~/projects': timelineData
     .filter(d => d.type === 'project')
     .map(p => p.title.toLowerCase().replace(/\s+/g, '-') + '.md'),
@@ -16,6 +17,10 @@ export const fileSystem = {
     .map(e => e.subtitle.split(',')[0].toLowerCase().replace(/\s+/g, '-') + '.md'),
   '~/skills': Object.keys(skills).map(k => k + '.txt'),
   '~/hobbies': hobbies.map(h => h.name.toLowerCase() + '.txt'),
+  '~/achievements': [
+    ...achievements.map(a => a.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') + '.md'),
+    'badminton-highlights.txt',
+  ],
 };
 
 // ASCII Art - using simple characters for compatibility
@@ -66,6 +71,7 @@ Available commands:
   projects          List all projects
   experience        List work experience
   education         Show education
+  achievements      Press, awards & badminton highlights
   skills            Display technical skills
   resume            View or download my resume
   hobbies           Show hobbies & interests
@@ -256,9 +262,38 @@ ${project.publication ? `Publication: ${project.publication}` : ''}`, instant: f
       if (skills[skillKey]) {
         const category = skillCategories[skillKey];
         return { content: `
-${category.icon} ${category.name.toUpperCase()}
+${skillCategoryEmojis[skillKey]} ${category.name.toUpperCase()}
 ${'='.repeat(40)}
 ${skills[skillKey].join('\n')}`, instant: false };
+      }
+
+      // Achievement files
+      const achievementSlugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+      const achievement = achievements.find(a => achievementSlugify(a.title) + '.md' === fileName);
+      if (achievement) {
+        return { content: `
+# ${achievement.title}
+  ${achievement.source} | ${achievement.date}
+  ${'='.repeat(50)}
+
+${achievement.description || ''}
+
+Read more: ${achievement.url}`, instant: false };
+      }
+
+      // Badminton highlights
+      if (fileName === 'badminton-highlights.txt') {
+        let body = `
+BADMINTON MATCH HIGHLIGHTS
+${'='.repeat(40)}
+
+A few match clips from Bay Area tournaments:
+
+`;
+        badmintonVideos.forEach((id, i) => {
+          body += `  Match ${i + 1}: https://youtu.be/${id}\n`;
+        });
+        return { content: body, instant: false };
       }
 
       // Hobby files
@@ -338,7 +373,7 @@ ${hobby.description}`, instant: false };
       Object.entries(skills).forEach(([key, items]) => {
         const category = skillCategories[key];
         output += `
-${category.icon} ${category.name.toUpperCase()}
+${skillCategoryEmojis[key]} ${category.name.toUpperCase()}
   ${items.join(' | ')}
 `;
       });
@@ -357,6 +392,36 @@ ${h.icon} ${h.name.toUpperCase()}
    ${h.description}
 
 `;
+      });
+      return { content: output, instant: false };
+    }
+
+    case 'achievements':
+    case 'recognition':
+    case 'press': {
+      const categoryLabels = { press: '[PRESS]', award: '[AWARD]' };
+      let output = `
++==================================================================+
+|                  ACHIEVEMENTS & RECOGNITION                      |
++==================================================================+
+`;
+      achievements.forEach((a, i) => {
+        output += `
+[${i + 1}] ${categoryLabels[a.category] || ''} ${a.title}
+    ${a.source} | ${a.date}
+    ${a.description || ''}
+    -> ${a.url}
+`;
+      });
+      output += `
++------------------------------------------------------------------+
+|                   BADMINTON MATCH HIGHLIGHTS                     |
++------------------------------------------------------------------+
+
+  ${badmintonVideos.length} match clips on YouTube:
+`;
+      badmintonVideos.forEach((id, i) => {
+        output += `    Match ${i + 1}: https://youtu.be/${id}\n`;
       });
       return { content: output, instant: false };
     }
@@ -646,7 +711,8 @@ Hint: There are some hidden Easter egg commands to discover!
 // Available commands for tab completion
 export const availableCommands = [
   'help', 'whoami', 'ls', 'cd', 'cat', 'projects', 'experience',
-  'education', 'skills', 'resume', 'hobbies', 'contact', 'clear', 'gui',
+  'education', 'achievements', 'recognition', 'press',
+  'skills', 'resume', 'hobbies', 'contact', 'clear', 'gui',
   'neofetch', 'history', 'matrix', 'coffee', 'cowsay', 'vim',
   'badminton', 'pwd', 'echo', 'date', 'ping'
 ];

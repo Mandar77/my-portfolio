@@ -52,6 +52,8 @@ capturing moments through photography, or exploring new places.`
   }
 };
 
+// Hobbies use plain-text icons for terminal output; the GUI maps each hobby name
+// to a react-icon component in GUI.jsx via the `hobbyIcons` map.
 export const hobbies = [
   {
     name: "Badminton",

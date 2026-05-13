@@ -1,14 +1,58 @@
 import React, { useState, useEffect } from 'react';
+import {
+  FaHouse, FaBriefcase, FaListCheck, FaScrewdriverWrench,
+  FaFileLines, FaTableTennisPaddleBall, FaEnvelope,
+  FaGraduationCap, FaGithub, FaLinkedin, FaInstagram,
+  FaXTwitter, FaLocationDot, FaArrowUpRightFromSquare,
+  FaCamera, FaPlane, FaLightbulb, FaFilePdf, FaDownload,
+  FaArrowRight, FaTrophy, FaNewspaper, FaPlay, FaMedal
+} from 'react-icons/fa6';
 import { timelineData } from '../data/timeline';
-import { skills, skillCategories } from '../data/skills';
+import { skillsData, skillCategories } from '../data/skills';
 import { personalInfo, hobbies, socialLinks } from '../data/personal';
+import { achievements, badmintonVideos } from '../data/achievements';
 import '../styles/gui.css';
+
+const mobileNavIcons = {
+  home: FaHouse,
+  projects: FaBriefcase,
+  experience: FaListCheck,
+  achievements: FaTrophy,
+  skills: FaScrewdriverWrench,
+  resume: FaFileLines,
+  hobbies: FaTableTennisPaddleBall,
+  contact: FaEnvelope,
+};
+
+const achievementCategoryIcons = {
+  press: FaNewspaper,
+  award: FaMedal,
+};
+
+const achievementCategoryLabels = {
+  press: "Press",
+  award: "Award",
+};
+
+const socialIcons = {
+  email: FaEnvelope,
+  github: FaGithub,
+  linkedin: FaLinkedin,
+  instagram: FaInstagram,
+  twitter: FaXTwitter,
+};
+
+const hobbyIcons = {
+  Badminton: FaTableTennisPaddleBall,
+  Photography: FaCamera,
+  Travel: FaPlane,
+};
 
 const GUI = ({ onModeSwitch }) => {
   const [activeSection, setActiveSection] = useState('home');
   const [isVisible, setIsVisible] = useState({});
 
-  const sections = ['home', 'projects', 'experience', 'skills', 'resume', 'hobbies', 'contact'];
+  const sections = ['home', 'projects', 'experience', 'achievements', 'skills', 'resume', 'hobbies', 'contact'];
 
   const projects = timelineData.filter(d => d.type === 'project');
   const experience = timelineData.filter(d => d.type === 'work');
@@ -53,21 +97,19 @@ const GUI = ({ onModeSwitch }) => {
 
       {/* Mobile Navigation */}
       <div className="mobile-nav">
-        {sections.map(section => (
-          <button
-            key={section}
-            className={`mobile-nav-link ${activeSection === section ? 'active' : ''}`}
-            onClick={() => setActiveSection(section)}
-          >
-            {section === 'home' && '🏠'}
-            {section === 'projects' && '💼'}
-            {section === 'experience' && '📋'}
-            {section === 'skills' && '🛠️'}
-            {section === 'resume' && '📄'}
-            {section === 'hobbies' && '🏸'}
-            {section === 'contact' && '📧'}
-          </button>
-        ))}
+        {sections.map(section => {
+          const Icon = mobileNavIcons[section];
+          return (
+            <button
+              key={section}
+              className={`mobile-nav-link ${activeSection === section ? 'active' : ''}`}
+              onClick={() => setActiveSection(section)}
+              aria-label={section}
+            >
+              <Icon />
+            </button>
+          );
+        })}
       </div>
 
       {/* Content */}
@@ -90,10 +132,10 @@ const GUI = ({ onModeSwitch }) => {
               <div className="hero-actions">
                 <button className="btn-primary" onClick={() => setActiveSection('projects')}>
                   <span>View Projects</span>
-                  <span className="btn-arrow">→</span>
+                  <FaArrowRight className="btn-arrow" aria-hidden="true" />
                 </button>
                 <button className="btn-secondary" onClick={() => setActiveSection('resume')}>
-                  <span className="btn-icon-inline">📄</span>
+                  <FaFilePdf className="btn-icon-inline" aria-hidden="true" />
                   <span>View Resume</span>
                 </button>
                 <button className="btn-secondary" onClick={() => setActiveSection('contact')}>
@@ -134,17 +176,13 @@ const GUI = ({ onModeSwitch }) => {
                     <span className="project-date">{project.date}</span>
                     <div className="project-links">
                       {project.github && (
-                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-icon-link" title="GitHub">
-                          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                          </svg>
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-icon-link" title="GitHub" aria-label="GitHub repository">
+                          <FaGithub />
                         </a>
                       )}
                       {project.publication && (
-                        <a href={project.publication} target="_blank" rel="noopener noreferrer" className="project-icon-link" title="Publication">
-                          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/>
-                          </svg>
+                        <a href={project.publication} target="_blank" rel="noopener noreferrer" className="project-icon-link" title="Publication" aria-label="View publication">
+                          <FaFileLines />
                         </a>
                       )}
                     </div>
@@ -152,6 +190,13 @@ const GUI = ({ onModeSwitch }) => {
                   <h3 className="project-title">{project.title}</h3>
                   <p className="project-subtitle">{project.subtitle}</p>
                   <p className="project-desc">{project.description}</p>
+                  {project.tech && project.tech.length > 0 && (
+                    <div className="project-tech">
+                      {project.tech.map((t, ti) => (
+                        <span key={ti} className="project-tech-chip">{t}</span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -167,7 +212,8 @@ const GUI = ({ onModeSwitch }) => {
             <div className="experience-grid">
               <div className="exp-column">
                 <h3 className="exp-column-title">
-                  <span className="column-icon">💼</span> Work Experience
+                  <FaBriefcase className="column-icon" aria-hidden="true" />
+                  <span>Work Experience</span>
                 </h3>
                 {experience.map((exp, i) => (
                   <div key={i} className="exp-card glass-card" style={{ animationDelay: `${i * 0.1}s` }}>
@@ -186,7 +232,8 @@ const GUI = ({ onModeSwitch }) => {
 
               <div className="exp-column">
                 <h3 className="exp-column-title">
-                  <span className="column-icon">🎓</span> Education
+                  <FaGraduationCap className="column-icon" aria-hidden="true" />
+                  <span>Education</span>
                 </h3>
                 {education.map((edu, i) => (
                   <div key={i} className="exp-card glass-card" style={{ animationDelay: `${i * 0.1}s` }}>
@@ -201,34 +248,117 @@ const GUI = ({ onModeSwitch }) => {
           </section>
         )}
 
+        {/* Achievements Section */}
+        {activeSection === 'achievements' && (
+          <section className={`gui-section achievements-section ${isVisible.achievements ? 'visible' : ''}`}>
+            <h2 className="section-title">Achievements & Recognition</h2>
+            <p className="section-subtitle">Press features, awards, and a few highlights from the badminton court</p>
+
+            <div className="achievements-grid">
+              {achievements.map((a, i) => {
+                const Icon = achievementCategoryIcons[a.category];
+                return (
+                  <a
+                    key={i}
+                    href={a.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="achievement-card glass-card"
+                    style={{ animationDelay: `${i * 0.1}s` }}
+                  >
+                    <div className="achievement-header">
+                      <span className={`achievement-badge achievement-badge-${a.category}`}>
+                        <Icon className="achievement-badge-icon" aria-hidden="true" />
+                        {achievementCategoryLabels[a.category]}
+                      </span>
+                      <span className="achievement-date">{a.date}</span>
+                    </div>
+                    <h3 className="achievement-title">{a.title}</h3>
+                    <p className="achievement-source">{a.source}</p>
+                    {a.description && <p className="achievement-desc">{a.description}</p>}
+                    <span className="achievement-link">
+                      Read more
+                      <FaArrowUpRightFromSquare className="achievement-link-icon" aria-hidden="true" />
+                    </span>
+                  </a>
+                );
+              })}
+            </div>
+
+            <div className="badminton-section glass-card">
+              <div className="badminton-header">
+                <FaTableTennisPaddleBall className="badminton-icon" aria-hidden="true" />
+                <div>
+                  <h3 className="badminton-title">Badminton Match Highlights</h3>
+                  <p className="badminton-subtitle">A few clips from Bay Area tournaments</p>
+                </div>
+              </div>
+              <div className="badminton-grid">
+                {badmintonVideos.map((videoId, i) => (
+                  <a
+                    key={videoId}
+                    href={`https://www.youtube.com/watch?v=${videoId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="badminton-video"
+                    aria-label={`Badminton match highlight ${i + 1}`}
+                  >
+                    <img
+                      src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}
+                      alt=""
+                      loading="lazy"
+                      className="badminton-thumb"
+                    />
+                    <span className="badminton-play">
+                      <FaPlay aria-hidden="true" />
+                    </span>
+                    <span className="badminton-label">Match {i + 1}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Skills Section */}
         {activeSection === 'skills' && (
           <section className={`gui-section skills-section ${isVisible.skills ? 'visible' : ''}`}>
             <h2 className="section-title">Technical Skills</h2>
             <p className="section-subtitle">Technologies and tools I work with</p>
             <div className="skills-grid">
-              {Object.entries(skills).map(([key, items], catIndex) => (
-                <div
-                  key={key}
-                  className="skill-category glass-card"
-                  style={{ animationDelay: `${catIndex * 0.1}s` }}
-                >
-                  <h3 className="skill-category-title">
-                    {skillCategories[key].icon} {skillCategories[key].name}
-                  </h3>
-                  <div className="skill-tags">
-                    {items.map((skill, i) => (
-                      <span 
-                        key={i} 
-                        className="skill-tag" 
-                        style={{ animationDelay: `${(catIndex * 0.1) + (i * 0.03)}s` }}
-                      >
-                        {skill}
-                      </span>
-                    ))}
+              {Object.entries(skillsData).map(([key, items], catIndex) => {
+                const CategoryIcon = skillCategories[key].icon;
+                return (
+                  <div
+                    key={key}
+                    className="skill-category glass-card"
+                    style={{ animationDelay: `${catIndex * 0.1}s` }}
+                  >
+                    <h3 className="skill-category-title">
+                      <CategoryIcon className="skill-category-icon" aria-hidden="true" />
+                      <span>{skillCategories[key].name}</span>
+                    </h3>
+                    <div className="skill-tags">
+                      {items.map((skill, i) => {
+                        const Icon = skill.icon;
+                        return (
+                          <span
+                            key={i}
+                            className="skill-tag"
+                            style={{
+                              animationDelay: `${(catIndex * 0.1) + (i * 0.03)}s`,
+                              '--skill-color': skill.color,
+                            }}
+                          >
+                            <Icon className="skill-tag-icon" aria-hidden="true" />
+                            <span>{skill.name}</span>
+                          </span>
+                        );
+                      })}
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </section>
         )}
@@ -245,7 +375,7 @@ const GUI = ({ onModeSwitch }) => {
                 rel="noopener noreferrer"
                 className="btn-primary"
               >
-                <span className="btn-icon-inline">↗</span>
+                <FaArrowUpRightFromSquare className="btn-icon-inline" aria-hidden="true" />
                 <span>Open in New Tab</span>
               </a>
               <a
@@ -253,7 +383,7 @@ const GUI = ({ onModeSwitch }) => {
                 download={personalInfo.resumeFileName}
                 className="btn-secondary"
               >
-                <span className="btn-icon-inline">⬇</span>
+                <FaDownload className="btn-icon-inline" aria-hidden="true" />
                 <span>Download PDF</span>
               </a>
             </div>
@@ -265,7 +395,7 @@ const GUI = ({ onModeSwitch }) => {
                 aria-label="Mandar Ambulkar Resume"
               >
                 <div className="resume-fallback">
-                  <span className="resume-fallback-icon">📄</span>
+                  <FaFilePdf className="resume-fallback-icon" aria-hidden="true" />
                   <p className="resume-fallback-text">
                     Your browser can't display the PDF inline.
                   </p>
@@ -276,7 +406,7 @@ const GUI = ({ onModeSwitch }) => {
                     className="btn-primary"
                   >
                     <span>Open Resume</span>
-                    <span className="btn-arrow">→</span>
+                    <FaArrowRight className="btn-arrow" aria-hidden="true" />
                   </a>
                 </div>
               </object>
@@ -290,20 +420,28 @@ const GUI = ({ onModeSwitch }) => {
             <h2 className="section-title">Hobbies & Interests</h2>
             <p className="section-subtitle">What I do when I'm not coding</p>
             <div className="hobbies-grid">
-              {hobbies.map((hobby, i) => (
-                <div
-                  key={i}
-                  className="hobby-card glass-card"
-                  style={{ animationDelay: `${i * 0.15}s` }}
-                >
-                  <div className="hobby-icon">{hobby.icon}</div>
-                  <h3 className="hobby-title">{hobby.name}</h3>
-                  <p className="hobby-desc">{hobby.description}</p>
-                </div>
-              ))}
+              {hobbies.map((hobby, i) => {
+                const Icon = hobbyIcons[hobby.name];
+                return (
+                  <div
+                    key={i}
+                    className="hobby-card glass-card"
+                    style={{ animationDelay: `${i * 0.15}s` }}
+                  >
+                    <div className="hobby-icon">
+                      {Icon ? <Icon aria-hidden="true" /> : hobby.icon}
+                    </div>
+                    <h3 className="hobby-title">{hobby.name}</h3>
+                    <p className="hobby-desc">{hobby.description}</p>
+                  </div>
+                );
+              })}
             </div>
             <div className="hobbies-tagline glass-card">
-              <p>💡 Pro tip: The best debugging happens after a good badminton session!</p>
+              <p>
+                <FaLightbulb className="tagline-icon" aria-hidden="true" />
+                Pro tip: The best debugging happens after a good badminton session!
+              </p>
             </div>
           </section>
         )}
@@ -319,24 +457,30 @@ const GUI = ({ onModeSwitch }) => {
                 or just chatting about technology. Feel free to reach out!
               </p>
               <div className="contact-links">
-                {Object.entries(socialLinks).map(([key, link]) => (
-                  <a 
-                    key={key}
-                    href={link.url} 
-                    target={key !== 'email' ? '_blank' : undefined}
-                    rel={key !== 'email' ? 'noopener noreferrer' : undefined}
-                    className="contact-link"
-                  >
-                    <span className="contact-icon">{link.icon}</span>
-                    <div className="contact-link-content">
-                      <span className="contact-link-label">{key.charAt(0).toUpperCase() + key.slice(1)}</span>
-                      <span className="contact-link-value">{link.display}</span>
-                    </div>
-                  </a>
-                ))}
+                {Object.entries(socialLinks).map(([key, link]) => {
+                  const Icon = socialIcons[key];
+                  return (
+                    <a
+                      key={key}
+                      href={link.url}
+                      target={key !== 'email' ? '_blank' : undefined}
+                      rel={key !== 'email' ? 'noopener noreferrer' : undefined}
+                      className="contact-link"
+                    >
+                      <Icon className="contact-icon" aria-hidden="true" />
+                      <div className="contact-link-content">
+                        <span className="contact-link-label">{key.charAt(0).toUpperCase() + key.slice(1)}</span>
+                        <span className="contact-link-value">{link.display}</span>
+                      </div>
+                      {key !== 'email' && (
+                        <FaArrowUpRightFromSquare className="contact-link-external" aria-hidden="true" />
+                      )}
+                    </a>
+                  );
+                })}
               </div>
               <div className="contact-location">
-                <span className="contact-icon">📍</span>
+                <FaLocationDot className="contact-icon" aria-hidden="true" />
                 <span>{personalInfo.location}</span>
               </div>
               <div className="contact-cta">
@@ -347,10 +491,6 @@ const GUI = ({ onModeSwitch }) => {
         )}
       </main>
 
-      {/* Footer hint */}
-      <div className="gui-footer">
-        <span>Tip: Try Dev Mode for a terminal experience with hidden easter eggs 🎮</span>
-      </div>
     </div>
   );
 };
