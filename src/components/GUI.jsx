@@ -120,7 +120,7 @@ const GUI = ({ onModeSwitch }) => {
             <div className="hero-content">
               <div className="hero-badge">
                 <span className="badge-dot"></span>
-                Available for opportunities
+                Open to new opportunities
               </div>
               <h1 className="hero-name">
                 <span className="name-line">Mandar</span>

@@ -8,32 +8,34 @@ export const personalInfo = {
 
   // Short tagline for terminal
   tagline: "If not coding, probably on the badminton court 🏸",
-  
+
   // Bio for different contexts
   bio: {
-    short: "MS Computer Science @ Northeastern University. Building intelligent, resilient systems.",
-    medium: "I'm a passionate computer scientist with experience in deep learning, cloud, and full-stack development. I love building impactful solutions and collaborating with diverse teams to solve real-world problems.",
-    long: `I'm a Software Engineer with a passion for building intelligent, resilient systems. 
-Currently pursuing my MS in Computer Science at Northeastern University, I specialize in:
+    short: "Software Development Engineer @ PASAL Inc. MS Computer Science from Northeastern University. Building intelligent, resilient systems.",
+    medium: "I'm a Software Development Engineer at PASAL Inc. with experience across deep learning, cloud-native systems, and full-stack development. I love building impactful solutions and collaborating with diverse teams to solve real-world problems.",
+    long: `I'm a Software Development Engineer at PASAL Inc., building scalable AI-driven systems. I recently completed my MS in Computer Science at Northeastern University.
+
+I specialize in:
 
   → Machine Learning & Deep Learning
-  → Full-Stack Development  
-  → Cloud-Native Architectures
+  → Full-Stack Development
+  → Cloud-Native & Serverless Architectures
   → Autonomous & Multi-Agent Systems
 
-My recent work includes building crash-resilient AI systems, RAG platforms for enterprise use, 
-and real-time applications with sub-200ms response times.
+My recent work includes designing a distributed cloud-native AI email pipeline,
+productionizing enterprise RAG platforms with sub-180ms latency, and shipping
+crash-resilient multi-agent systems.
 
 When I'm not coding, you'll find me on the badminton court competing in Bay Area tournaments,
 capturing moments through photography, or exploring new places.`
   },
-  
+
   // Education summary
   education: {
     current: {
       degree: "Master of Science in Computer Science",
       school: "Northeastern University",
-      gpa: "3.80/4.0",
+      gpa: "3.87/4.0",
       year: "Jan 2024 - Dec 2025"
     },
     undergrad: {
@@ -43,11 +45,10 @@ capturing moments through photography, or exploring new places.`
       year: "Aug 2019 - May 2023"
     }
   },
-  
+
   // Stats for display
   stats: {
-    projects: 11,
-    gpa: "3.80",
+    gpa: "3.87",
     publications: "3+"
   }
 };

@@ -5,14 +5,14 @@ import {
   SiTailwindcss, SiLangchain, SiPandas, SiNumpy,
   SiGunicorn, SiJest, SiEslint,
   SiMysql, SiPostgresql, SiMongodb, SiSupabase, SiSqlite,
-  SiGooglecloud, SiDocker, SiKubernetes,
-  SiRedhatopenshift, SiTerraform, SiAnsible, SiVercel,
+  SiAmazonwebservices, SiGooglecloud, SiDocker, SiKubernetes,
+  SiRedhatopenshift, SiTerraform, SiAnsible, SiVercel, SiHelm,
   SiNvidia, SiGit, SiGitlab, SiJenkins, SiPrometheus, SiGrafana
 } from 'react-icons/si';
 import {
   FaCode, FaJava, FaCloud, FaDatabase, FaBrain, FaWrench, FaGlobe,
   FaGears, FaNetworkWired, FaLock, FaServer, FaMagnifyingGlass, FaPlug,
-  FaDiagramProject
+  FaDiagramProject, FaSitemap, FaBolt, FaMicrochip
 } from 'react-icons/fa6';
 
 // Brand-colored, per-skill icon definitions.
@@ -27,9 +27,10 @@ export const skillsData = {
     { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
   ],
   frameworks: [
-    { name: "TensorFlow", icon: SiTensorflow, color: "#FF6F00" },
     { name: "Keras", icon: SiKeras, color: "#D00000" },
+    { name: "TensorFlow", icon: SiTensorflow, color: "#FF6F00" },
     { name: "PyTorch", icon: SiPytorch, color: "#EE4C2C" },
+    { name: "Torch", icon: SiPytorch, color: "#EE4C2C" },
     { name: "Scikit-learn", icon: SiScikitlearn, color: "#F7931E" },
     { name: "OpenVINO", icon: FaGears, color: "#0068B5" },
     { name: "React", icon: SiReact, color: "#61DAFB" },
@@ -65,13 +66,16 @@ export const skillsData = {
     { name: "SQLite", icon: SiSqlite, color: "#003B57" },
   ],
   cloud: [
-    { name: "AWS", icon: FaCloud, color: "#FF9900" },
+    { name: "AWS", icon: SiAmazonwebservices, color: "#FF9900" },
     { name: "Google Cloud", icon: SiGooglecloud, color: "#4285F4" },
     { name: "Docker", icon: SiDocker, color: "#2496ED" },
     { name: "Kubernetes", icon: SiKubernetes, color: "#326CE5" },
     { name: "OpenShift", icon: SiRedhatopenshift, color: "#EE0000" },
     { name: "Terraform", icon: SiTerraform, color: "#7B42BC" },
     { name: "Ansible", icon: SiAnsible, color: "#EE0000" },
+    { name: "Helm", icon: SiHelm, color: "#0F1689" },
+    { name: "GitOps", icon: FaGears, color: "#06B6D4" },
+    { name: "CI/CD (Jenkins, GitLab CI)", icon: FaGears, color: "#06B6D4" },
     { name: "Vercel", icon: SiVercel, color: "#FFFFFF" },
   ],
   devops: [
@@ -83,7 +87,6 @@ export const skillsData = {
     { name: "Jenkins", icon: SiJenkins, color: "#D24939" },
     { name: "Prometheus", icon: SiPrometheus, color: "#E6522C" },
     { name: "Grafana", icon: SiGrafana, color: "#F46800" },
-    { name: "CI/CD", icon: FaGears, color: "#06B6D4" },
   ],
   web: [
     { name: "REST APIs", icon: FaPlug, color: "#06B6D4" },
@@ -91,6 +94,12 @@ export const skillsData = {
     { name: "WebSockets", icon: FaNetworkWired, color: "#A78BFA" },
     { name: "State Management", icon: FaGears, color: "#EC4899" },
     { name: "API Integration", icon: FaPlug, color: "#F59E0B" },
+  ],
+  distributed: [
+    { name: "Microservices Architecture", icon: FaSitemap, color: "#06B6D4" },
+    { name: "Distributed Systems", icon: FaSitemap, color: "#A78BFA" },
+    { name: "Low-latency Systems", icon: FaBolt, color: "#FBBF24" },
+    { name: "Edge Computing", icon: FaMicrochip, color: "#10B981" },
   ],
 };
 
@@ -107,8 +116,9 @@ export const skillCategories = {
   aiMl: { name: "AI/ML & NLP", icon: FaBrain },
   databases: { name: "Databases", icon: FaDatabase },
   cloud: { name: "Cloud & DevOps", icon: FaCloud },
-  devops: { name: "Performance & CI/CD", icon: FaGears },
+  devops: { name: "Performance & Tooling", icon: FaGears },
   web: { name: "Web Technologies", icon: FaGlobe },
+  distributed: { name: "Distributed Systems & Networking", icon: FaSitemap },
 };
 
 // Plain-text icons used by the terminal (no React).
@@ -120,4 +130,5 @@ export const skillCategoryEmojis = {
   cloud: "[CLOUD]",
   devops: "[OPS]",
   web: "[WEB]",
+  distributed: "[DIST]",
 };
