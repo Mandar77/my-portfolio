@@ -1,18 +1,17 @@
 import {
   SiPython, SiC, SiCplusplus, SiJavascript, SiTypescript,
-  SiTensorflow, SiKeras, SiPytorch, SiScikitlearn,
+  SiTensorflow, SiPytorch, SiScikitlearn,
   SiReact, SiNextdotjs, SiFastapi, SiFlask, SiNodedotjs,
-  SiTailwindcss, SiLangchain, SiPandas, SiNumpy,
-  SiGunicorn, SiJest, SiEslint,
+  SiTailwindcss, SiLangchain,
   SiMysql, SiPostgresql, SiMongodb, SiSupabase, SiSqlite,
   SiAmazonwebservices, SiGooglecloud, SiDocker, SiKubernetes,
-  SiRedhatopenshift, SiTerraform, SiAnsible, SiVercel, SiHelm,
-  SiNvidia, SiGit, SiGitlab, SiJenkins, SiPrometheus, SiGrafana
+  SiTerraform, SiVercel, SiHelm,
+  SiNvidia, SiGit, SiPrometheus, SiGrafana
 } from 'react-icons/si';
 import {
   FaCode, FaJava, FaCloud, FaDatabase, FaBrain, FaWrench, FaGlobe,
-  FaGears, FaNetworkWired, FaLock, FaServer, FaMagnifyingGlass, FaPlug,
-  FaDiagramProject, FaSitemap, FaBolt, FaMicrochip
+  FaGears, FaNetworkWired, FaLock, FaMagnifyingGlass, FaPlug,
+  FaDiagramProject, FaSitemap, FaBolt
 } from 'react-icons/fa6';
 
 // Brand-colored, per-skill icon definitions.
@@ -27,33 +26,21 @@ export const skillsData = {
     { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
   ],
   frameworks: [
-    { name: "Keras", icon: SiKeras, color: "#D00000" },
-    { name: "TensorFlow", icon: SiTensorflow, color: "#FF6F00" },
     { name: "PyTorch", icon: SiPytorch, color: "#EE4C2C" },
-    { name: "Torch", icon: SiPytorch, color: "#EE4C2C" },
+    { name: "TensorFlow", icon: SiTensorflow, color: "#FF6F00" },
     { name: "Scikit-learn", icon: SiScikitlearn, color: "#F7931E" },
-    { name: "OpenVINO", icon: FaGears, color: "#0068B5" },
     { name: "React", icon: SiReact, color: "#61DAFB" },
     { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
     { name: "FastAPI", icon: SiFastapi, color: "#009688" },
-    { name: "Flask", icon: SiFlask, color: "#FFFFFF" },
     { name: "Node.js", icon: SiNodedotjs, color: "#5FA04E" },
+    { name: "Flask", icon: SiFlask, color: "#FFFFFF" },
     { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8" },
     { name: "LangChain", icon: SiLangchain, color: "#1C3C3C" },
-    { name: "Pandas", icon: SiPandas, color: "#150458" },
-    { name: "NumPy", icon: SiNumpy, color: "#4D77CF" },
-    { name: "Beautiful Soup", icon: FaCode, color: "#A78BFA" },
-    { name: "Uvicorn", icon: FaServer, color: "#499848" },
-    { name: "Gunicorn", icon: SiGunicorn, color: "#499848" },
-    { name: "Jest", icon: SiJest, color: "#C21325" },
-    { name: "ESLint", icon: SiEslint, color: "#4B32C3" },
   ],
   aiMl: [
     { name: "LLM Integration", icon: FaBrain, color: "#A78BFA" },
     { name: "RAG Systems", icon: FaDiagramProject, color: "#06B6D4" },
     { name: "Vector Embeddings", icon: FaMagnifyingGlass, color: "#EC4899" },
-    { name: "FAISS", icon: FaMagnifyingGlass, color: "#0467DF" },
-    { name: "Semantic Search", icon: FaMagnifyingGlass, color: "#10B981" },
     { name: "Prompt Engineering", icon: FaCode, color: "#F59E0B" },
     { name: "NLP Processing", icon: FaBrain, color: "#A78BFA" },
   ],
@@ -70,12 +57,9 @@ export const skillsData = {
     { name: "Google Cloud", icon: SiGooglecloud, color: "#4285F4" },
     { name: "Docker", icon: SiDocker, color: "#2496ED" },
     { name: "Kubernetes", icon: SiKubernetes, color: "#326CE5" },
-    { name: "OpenShift", icon: SiRedhatopenshift, color: "#EE0000" },
     { name: "Terraform", icon: SiTerraform, color: "#7B42BC" },
-    { name: "Ansible", icon: SiAnsible, color: "#EE0000" },
     { name: "Helm", icon: SiHelm, color: "#0F1689" },
-    { name: "GitOps", icon: FaGears, color: "#06B6D4" },
-    { name: "CI/CD (Jenkins, GitLab CI)", icon: FaGears, color: "#06B6D4" },
+    { name: "CI/CD", icon: FaGears, color: "#06B6D4" },
     { name: "Vercel", icon: SiVercel, color: "#FFFFFF" },
   ],
   devops: [
@@ -83,23 +67,18 @@ export const skillsData = {
     { name: "TensorRT", icon: SiNvidia, color: "#76B900" },
     { name: "CUDA", icon: SiNvidia, color: "#76B900" },
     { name: "Git", icon: SiGit, color: "#F05032" },
-    { name: "GitLab", icon: SiGitlab, color: "#FC6D26" },
-    { name: "Jenkins", icon: SiJenkins, color: "#D24939" },
     { name: "Prometheus", icon: SiPrometheus, color: "#E6522C" },
     { name: "Grafana", icon: SiGrafana, color: "#F46800" },
   ],
   web: [
     { name: "REST APIs", icon: FaPlug, color: "#06B6D4" },
-    { name: "OAuth Integration", icon: FaLock, color: "#10B981" },
+    { name: "OAuth", icon: FaLock, color: "#10B981" },
     { name: "WebSockets", icon: FaNetworkWired, color: "#A78BFA" },
-    { name: "State Management", icon: FaGears, color: "#EC4899" },
-    { name: "API Integration", icon: FaPlug, color: "#F59E0B" },
   ],
   distributed: [
-    { name: "Microservices Architecture", icon: FaSitemap, color: "#06B6D4" },
+    { name: "Microservices", icon: FaSitemap, color: "#06B6D4" },
     { name: "Distributed Systems", icon: FaSitemap, color: "#A78BFA" },
     { name: "Low-latency Systems", icon: FaBolt, color: "#FBBF24" },
-    { name: "Edge Computing", icon: FaMicrochip, color: "#10B981" },
   ],
 };
 

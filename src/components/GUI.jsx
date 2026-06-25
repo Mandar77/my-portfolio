@@ -4,7 +4,7 @@ import {
   FaFileLines, FaTableTennisPaddleBall, FaEnvelope,
   FaGraduationCap, FaGithub, FaLinkedin, FaInstagram,
   FaXTwitter, FaLocationDot, FaArrowUpRightFromSquare,
-  FaCamera, FaPlane, FaLightbulb, FaFilePdf, FaDownload,
+  FaCamera, FaPlane, FaFilePdf, FaDownload,
   FaArrowRight, FaTrophy, FaNewspaper, FaPlay, FaMedal
 } from 'react-icons/fa6';
 import { timelineData } from '../data/timeline';
@@ -70,10 +70,7 @@ const GUI = ({ onModeSwitch }) => {
     <div className="gui-container">
       {/* Background */}
       <div className="gui-background">
-        <div className="gradient-orb orb-1"></div>
-        <div className="gradient-orb orb-2"></div>
-        <div className="gradient-orb orb-3"></div>
-        <div className="grid-overlay"></div>
+        <div className="dot-grid"></div>
       </div>
 
       {/* Navigation */}
@@ -437,12 +434,6 @@ const GUI = ({ onModeSwitch }) => {
                 );
               })}
             </div>
-            <div className="hobbies-tagline glass-card">
-              <p>
-                <FaLightbulb className="tagline-icon" aria-hidden="true" />
-                Pro tip: The best debugging happens after a good badminton session!
-              </p>
-            </div>
           </section>
         )}
 
@@ -482,9 +473,6 @@ const GUI = ({ onModeSwitch }) => {
               <div className="contact-location">
                 <FaLocationDot className="contact-icon" aria-hidden="true" />
                 <span>{personalInfo.location}</span>
-              </div>
-              <div className="contact-cta">
-                <p>Open to: Full-time roles, collaborations, and badminton matches! 🏸</p>
               </div>
             </div>
           </section>
