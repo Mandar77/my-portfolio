@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Mandar Ambulkar",
   title: "Software Engineer • ML Engineer • Full Stack Developer",
-  location: "San Jose, CA",
+  location: "Auburn Hills, MI",
   email: "ambulkar.m@northeastern.edu",
   resumeUrl: process.env.PUBLIC_URL + "/Mandar-Ambulkar-Resume.pdf",
   resumeFileName: "Mandar-Ambulkar-Resume.pdf",
@@ -11,23 +11,23 @@ export const personalInfo = {
 
   // Bio for different contexts
   bio: {
-    short: "Software Development Engineer @ PASAL Inc. MS Computer Science from Northeastern University. Building intelligent, resilient systems.",
-    medium: "I'm a Software Development Engineer at PASAL Inc. with experience across deep learning, cloud-native systems, and full-stack development. I love building impactful solutions and collaborating with diverse teams to solve real-world problems.",
-    long: `I'm a Software Development Engineer at PASAL Inc., building scalable AI-driven systems. I recently completed my MS in Computer Science at Northeastern University.
+    short: "Software Engineer @ Tata Consultancy Services (Client: Stellantis). MS Computer Science from Northeastern University. Building intelligent, resilient systems.",
+    medium: "I'm a Software Engineer at Tata Consultancy Services, working on Stellantis' aftersales dealer data integration platform, with experience across data engineering, cloud-native systems, deep learning, and full-stack development. I love building impactful solutions and collaborating with diverse teams to solve real-world problems.",
+    long: `I'm a Software Engineer at Tata Consultancy Services, building data integration pipelines for Stellantis' aftersales dealer platform. I completed my MS in Computer Science at Northeastern University in December 2025.
 
 I specialize in:
 
+  → Data Engineering & ETL Pipelines
+  → Cloud-Native & Serverless Architectures
   → Machine Learning & Deep Learning
   → Full-Stack Development
-  → Cloud-Native & Serverless Architectures
-  → Autonomous & Multi-Agent Systems
 
-My recent work includes designing a distributed cloud-native AI email pipeline,
-productionizing enterprise RAG platforms with sub-180ms latency, and shipping
-crash-resilient multi-agent systems.
+My recent work includes onboarding a DMS provider into an enterprise dealer data
+platform with Python/AWS Glue ETL, designing a distributed cloud-native AI email
+pipeline, and productionizing enterprise RAG platforms with sub-180ms latency.
 
-When I'm not coding, you'll find me on the badminton court competing in Bay Area tournaments,
-capturing moments through photography, or exploring new places.`
+When I'm not coding, you'll find me on the badminton court, capturing moments
+through photography, or exploring new places.`
   },
 
   // Education summary
@@ -35,7 +35,7 @@ capturing moments through photography, or exploring new places.`
     current: {
       degree: "Master of Science in Computer Science",
       school: "Northeastern University",
-      gpa: "3.87/4.0",
+      gpa: "3.8/4.0",
       year: "Jan 2024 - Dec 2025"
     },
     undergrad: {
@@ -48,7 +48,7 @@ capturing moments through photography, or exploring new places.`
 
   // Stats for display
   stats: {
-    gpa: "3.87",
+    gpa: "3.8",
     publications: "3+"
   }
 };
@@ -59,7 +59,7 @@ export const hobbies = [
   {
     name: "Badminton",
     icon: "🏸",
-    description: "I regularly play badminton and compete in recreational tournaments at the A/B level across the Bay Area. It's a great way to stay active and meet fellow players in the community."
+    description: "I regularly play badminton and compete in recreational tournaments at the A/B level, with several seasons on the Bay Area circuit. It's a great way to stay active and meet fellow players in the community."
   },
   {
     name: "Photography",

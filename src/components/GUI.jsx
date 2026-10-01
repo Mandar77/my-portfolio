@@ -115,10 +115,6 @@ const GUI = ({ onModeSwitch }) => {
         {activeSection === 'home' && (
           <section className={`gui-section home-section ${isVisible.home ? 'visible' : ''}`}>
             <div className="hero-content">
-              <div className="hero-badge">
-                <span className="badge-dot"></span>
-                Open to new opportunities
-              </div>
               <h1 className="hero-name">
                 <span className="name-line">Mandar</span>
                 <span className="name-line">Ambulkar</span>

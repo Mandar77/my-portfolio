@@ -1,10 +1,26 @@
 export const timelineData = [
   {
-    date: "May 2026 - Present",
+    date: "Sept 2026 - Present",
+    title: "Software Engineer",
+    subtitle: "Tata Consultancy Services (Client: Stellantis), Auburn Hills, MI",
+    description: "Spearheaded onboarding of Pinewood AI DMS into Stellantis' aftersales dealer data integration platform, ingesting 10+ feeds (repair orders, parts, labor) via Python/AWS Glue ETL jobs mapped to the target schema in S3. Reduced malformed-record ingestion by ~90% with a Python schema-validation layer and SQS dead-letter routing, ensuring only conformant data reaches the downstream service management application. Cut integration test turnaround by 40% with Postman collections and Dockerized Node.js mock services replicating Pinewood API responses for repeatable contract testing across dev/QA. Resolved data-mapping discrepancies within 48 hours by coordinating Stellantis SMEs and offshore TCS teams while owning the source-to-target mapping spec.",
+    type: "work",
+  },
+  {
+    date: "May 2026 - August 2026",
     title: "Software Development Engineer",
     subtitle: "PASAL Inc., Remote",
     description: "Architected and deployed a scalable, distributed, cloud-native AI outbound email pipeline using Next.js 15, Inngest durable functions, and LLMs (Gemini & GPT-4o-mini), automating delivery of ~500 highly personalized emails/month on a ~$85/month budget. Engineered the database layer on Neon Postgres + Drizzle ORM with a non-bypassable pre-send compliance framework ensuring 100% adherence to CAN-SPAM and AI-content regulations.",
     type: "work",
+  },
+  {
+    date: "2026",
+    title: "Interview Assistant",
+    subtitle: "AI Hiring Platform, Personal Project",
+    description: "Two-sided hiring platform pairing an employer assessment studio with a proctored candidate mock-interview workspace. Delivered real-time interview feedback under 2s end-to-end by streaming Whisper speech-to-text and locally hosted Ollama LLM evaluations over WebSockets and SSE to a React 18 + TypeScript client. Built role-based employer and candidate workflows on FastAPI REST APIs and Tailwind CSS, covering assessment authoring, proctored sessions, and automated scoring.",
+    type: "project",
+    github: "https://github.com/Mandar77/interview_assistant",
+    tech: ["FastAPI", "React", "TypeScript", "WebSockets", "Whisper", "Ollama", "Tailwind CSS"]
   },
   {
     date: "January 2026",
@@ -70,7 +86,7 @@ export const timelineData = [
     date: "Jan 2024 - Dec 2025",
     title: "Master of Science in Computer Science",
     subtitle: "Northeastern University, San Jose, CA",
-    description: "GPA: 3.87/4.0. Courses: Pattern Recognition, Computer Vision, Natural Language Processing, Data Mining, Algorithms, Programming Design Paradigm.",
+    description: "GPA: 3.8/4.0. Courses: Pattern Recognition, Computer Vision, Natural Language Processing, Data Mining, Algorithms, Programming Design Paradigm.",
     type: "education",
   },
   {

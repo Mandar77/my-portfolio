@@ -107,16 +107,16 @@ Email: ${personalInfo.email}`, instant: false };
         .---.        mandar@portfolio
        /     \\       -----------------
        \\.@-@./       OS: Human 1.0 (Developer Edition)
-       /\`\\_/\`\\       Host: San Jose, CA
+       /\`\\_/\`\\       Host: Auburn Hills, MI
       //  _  \\\\      Kernel: CS @ Northeastern
      | \\     )|_     Uptime: 25 years
     /\`\\_\`>  <_/ \\    Shell: bash/zsh
     \\__/'---'\\__/    Status: ${Math.random() > 0.5 ? 'Coding' : 'On the badminton court'}
 
-                     Languages: Python, Java, JS, C++
-   +-----------+     Frameworks: React, FastAPI, PyTorch
-   | I <3 CODE |     Cloud: AWS, GCP, Docker, K8s
-   +-----------+     GPU: CUDA/Triton optimized
+                     Languages: Python, JS/TS, SQL, Java, C++
+   +-----------+     Web: React, Next.js, FastAPI, Node
+   | I <3 CODE |     Cloud: AWS, Azure, GCP, Docker, K8s
+   +-----------+     Data: Glue/ETL, PySpark, Snowflake
                      Memory: Lots of coffee
 
                      GPA: ${personalInfo.stats.gpa}/4.0
@@ -530,7 +530,7 @@ OPTIONS
     Fun facts about my badminton journey:
     
     * Level: A/B recreational tournaments
-    * Location: Bay Area courts
+    * Courts: Bay Area circuit, now Metro Detroit
     * Favorite shot: The deceptive drop shot
     * Play style: Aggressive at the net, just like my git commits
     
@@ -635,10 +635,10 @@ Installing dependencies...
   [OK] badminton-skills@competitive
 
 Loading experience modules...
-  [OK] ML/Deep Learning ............ loaded
-  [OK] Full-Stack Development ...... loaded
+  [OK] Data Engineering & ETL ...... loaded
   [OK] Cloud Architecture .......... loaded
-  [OK] Distributed Systems ......... loaded
+  [OK] Full-Stack Development ...... loaded
+  [OK] ML/Deep Learning ............ loaded
 
 Running compatibility check...
   [OK] Culture fit: HIGH
